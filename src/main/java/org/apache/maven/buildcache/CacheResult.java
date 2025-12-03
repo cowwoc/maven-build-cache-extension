@@ -76,6 +76,14 @@ public class CacheResult {
         return new CacheResult(orig.status, build, orig.context);
     }
 
+    /**
+     * @deprecated Use {@link #rebuilt(CacheResult, Build)} instead.
+     */
+    @Deprecated
+    public static CacheResult rebuilded(CacheResult orig, Build build) {
+        return rebuilt(orig, build);
+    }
+
     public boolean isSuccess() {
         return status == RestoreStatus.SUCCESS;
     }
